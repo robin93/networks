@@ -34,6 +34,16 @@ def intro():
 	G2 = GenRndGnm(PNGraph,100,1000)
 	print "G2 Nodes: %d ,Edges : %d" %(G2.GetNodes(),G2.GetEdges())	
 
+	for NI in G2.Nodes():
+		print "Node %d with out-degree %d and in-degree %d" %(NI.GetId(),NI.GetOutDeg(),NI.GetInDeg())
+
+	for EI in G2.Edges():
+		print "Edge (%d,%d)" %(EI.GetSrcNId(),EI.GetDstNId())
+
+	for NI in G2.Nodes():
+		for Id in NI.GetOutEdges():
+			print "edge (%d,%d)" %(NI.GetId(),Id)
+
 
 if __name__ == '__main__':
 	intro()
